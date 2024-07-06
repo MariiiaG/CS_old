@@ -4,3 +4,20 @@
 //[“Hello”, “2”, “world”, “:-)”] → [“2”, “:-)”]
 //[“1234”, “1567”, “-2”, “computer science”] → [“-2”]
 //[“Russia”, “Denmark”, “Kazan”] → []
+
+
+string[] SelectByLength(string[] array, int elLength)
+{
+    string[] myArray = new string[array.Length];
+    int j = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= elLength)
+        {
+            myArray[j] = array[i];
+            j++;
+        }
+    }
+    Array.Resize(ref myArray, j);
+    return myArray;
+}
