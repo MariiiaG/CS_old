@@ -45,3 +45,10 @@ string[] GetStrArrayInput()
     Console.WriteLine("Array successfully created ! ");
     return array;
 }
+
+
+string[] test = GetStrArrayInput();
+Console.WriteLine(String.Join(", ", test));
+
+string[] final = SelectByLength(test, 3);
+Console.WriteLine("Your new array is " + "[" + String.Join(", ", final) + "]");
