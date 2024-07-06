@@ -21,3 +21,27 @@ string[] SelectByLength(string[] array, int elLength)
     Array.Resize(ref myArray, j);
     return myArray;
 }
+
+
+string[] GetStrArrayInput()
+{
+    Console.WriteLine("Let'smake an array");
+    int arraySize = 0;
+    do
+    {
+        Console.Write("Provide array length :");
+        bool parseInput = int.TryParse(Console.ReadLine(), out int i);
+        if (parseInput != true || i <= 0) Console.WriteLine("Input error. Try again");
+        arraySize = i;
+    }
+    while (arraySize <= 0);
+
+    string[] array = new string[arraySize];
+    for (int i = 0; i < arraySize; i++)
+    {
+        Console.Write($"Input array element number {i} : ");
+        array[i] = Console.ReadLine();
+    }
+    Console.WriteLine("Array successfully created ! ");
+    return array;
+}
